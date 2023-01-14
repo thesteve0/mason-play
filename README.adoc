@@ -1,0 +1,40 @@
+= mason-play
+
+Experiments with MASON - trying to get it to work without a main class
+
+Since MASON and GeoMason are not in a Maven repository we either need to
+
+1. Put them in our own repository and reference that in this maven pom.
+Here is the https://azure.microsoft.com/en-us/products/devops/artifacts[Azure Product] that should do this
+
+2. Install the jar files to the local maven repository for any machine build our project
+
+Option 2 looks like this (found on https://stackoverflow.com/questions/4955635/how-to-add-local-jar-files-to-a-maven-project[stack overflow]
+
+    mvn install:install-file \
+    -Dfile=<path-to-file> \
+    -DgroupId=<group-id> \
+    -DartifactId=<artifact-id> \
+    -Dversion=<version> \
+    -Dpackaging=<packaging> \
+    -DgeneratePom=true
+
+Where each refers to:
+
+`<path-to-file>`: the path to the file to load e.g → `c:\kaptcha-2.3.jar`
+
+`<group-id>`: the group that the file should be registered under e.g → `com.google.code`
+
+`<artifact-id>`: the artifact name for the file e.g → `kaptcha`
+
+`<version>`: the version of the file e.g → `2.3`
+
+`<packaging>`: the packaging of the file e.g. → `jar`
+
+**Reference**
+
+* Maven FAQ: [I have a jar that I want to put into my local repository. How can I copy it in?][1]
+* Maven Install Plugin Usage: [The `install:install-file` goal][2]
+
+[1]: http://maven.apache.org/general.html#importing-jars
+[2]: https://maven.apache.org/plugins/maven-install-plugin/usage.html#The_install:install-file_goal
