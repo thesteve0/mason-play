@@ -31,6 +31,11 @@ Where each refers to:
 
 `<packaging>`: the packaging of the file e.g. → `jar`
 
+```
+ mvn install:install-file -Dfile="ext-jars\mason.21.jar" -DgroupId="org.mason" -DartifactId="masonRelease" -Dversion="21" -Dpackaging=jar
+
+```
+
 **Reference**
 
 * Maven FAQ: [I have a jar that I want to put into my local repository. How can I copy it in?][1]

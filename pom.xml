@@ -11,16 +11,25 @@
 	<groupId>org.molw</groupId>
 	<artifactId>mason-play</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>mason-play</name>
 	<description>Just playing around with MASON from a web server</description>
 	<properties>
 		<java.version>17</java.version>
 		<spring-cloud-azure.version>4.5.0</spring-cloud-azure.version>
 	</properties>
 	<dependencies>
+		<!-- This had to be added bc Mason currently doesn't publish a Jar file to Maven repos -->
+		<dependency>
+			<groupId>org.mason</groupId>
+			<artifactId>masonRelease</artifactId>
+			<version>21</version>
+		</dependency>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-actuator</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-web</artifactId>
 		</dependency>
 		<dependency>
 			<groupId>com.azure.spring</groupId>
