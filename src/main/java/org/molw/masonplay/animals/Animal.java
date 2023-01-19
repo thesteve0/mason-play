@@ -1,11 +1,13 @@
 package org.molw.masonplay.animals;
+
 import sim.engine.SimState;
 import sim.engine.Steppable;
 
+public class Animal implements Steppable {
 
-public class TigerSalamander implements Steppable{
 
-    public void step(SimState state){
+    @Override
+    public void step(SimState simState) {
 
     }
 }

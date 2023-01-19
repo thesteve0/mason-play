@@ -2,6 +2,19 @@
 
 Experiments with MASON - trying to get it to work without a main class
 
+
+The flow of of a simulation request should be
+
+1. User signs in
+2. User picks a species, optionally change some of the species parameters, and enters metadata required to run the sim.
+3. The sends a post to endpoints.DataInput
+4. This sends a request to SimManager
+5. SimManager creates a queue of number of sims to run divided by some factor
+6. SimManager Creates as many SimRunners as it wants to speed up the processing. Each simrunner populated with the right info
+6. SimRunner then runs the simulation
+
+
+
 Since MASON and GeoMason are not in a Maven repository we either need to
 
 1. Put them in our own repository and reference that in this maven pom.
