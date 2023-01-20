@@ -8,11 +8,23 @@ The flow of of a simulation request should be
 1. User signs in
 2. User picks a species, optionally change some of the species parameters, and enters metadata required to run the sim.
 3. The sends a post to endpoints.DataInput
-4. This sends a request to SimManager
+4. DataInput puts it in a queue (or perhaps a POST) for SimManager ( a separate microservice) to pick up
+
+4. SimManager grabs the job off the queue or gets the POST
 5. SimManager creates a queue of number of sims to run divided by some factor
 6. SimManager Creates as many SimRunners as it wants to speed up the processing. Each simrunner populated with the right info
 6. SimRunner then runs the simulation
 
+== Input and Output Grid
+The input grid for "habitat" must be projected but we don't care which projection
+
+We will compute pixel size by Xmax-Xmin and Ymax-Ymin (pixel size need to be the same in both directions)
+
+The output grid will cover the same extent and pixel size as the habitat grid
+
+== Animals on a rasterized or continuous surface
+There is no reason why the animals can't actually move in continual space and just query the raster under them
+I need to bounc that idea off someone
 
 
 Since MASON and GeoMason are not in a Maven repository we either need to

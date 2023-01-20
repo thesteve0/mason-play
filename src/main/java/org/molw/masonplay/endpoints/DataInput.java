@@ -21,7 +21,9 @@ public class DataInput {
 
     @GetMapping("/run")
     public String runSimulation(){
-        return "worked";
+
+        simManager.startSimulation();
+        return("finsihed");
     }
 
 }
