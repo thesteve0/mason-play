@@ -28,14 +28,18 @@ public class MySimState2 extends SimState {
         world.clear();
 
         Animal2 a;
-        for (int numberOfAnimals = 0; numberOfAnimals < 2 ; numberOfAnimals++) {
+        for (int numberOfAnimals = 0; numberOfAnimals < 4 ; numberOfAnimals++) {
 
-            a = new Animal2();
             //Make an animal
-            schedule.scheduleRepeating(a);
+            a = new Animal2();
 
             //now place it in a random location on the grid
             world.setObjectLocation(a, new Double2D(random.nextDouble()*world.getWidth(), random.nextDouble()* world.getHeight()));
+
+            //Add it to the scheduling queue
+            schedule.scheduleRepeating(a);
+
+
         }
     }
 }

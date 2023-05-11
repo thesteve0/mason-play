@@ -1,6 +1,6 @@
 package org.molw.masonplay.endpoints;
 
-import org.molw.masonapp1.MySimState2;
+import org.molw.masonapp1.MySimState;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -19,7 +19,7 @@ public class JustRun {
          */
 
         // Instantiate the SimState
-        MySimState2 mySimState = new MySimState2(System.currentTimeMillis());
+        MySimState mySimState = new MySimState(System.currentTimeMillis());
 
         //Tell it to start, which initializes and adds all the agents
         mySimState.start();

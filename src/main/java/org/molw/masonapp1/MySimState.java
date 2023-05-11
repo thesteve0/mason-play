@@ -3,9 +3,9 @@ package org.molw.masonapp1;
 import org.molw.masonplay.animals.Animal;
 import sim.engine.SimState;
 
-public class MySimState2 extends SimState {
+public class MySimState extends SimState {
 
-    public MySimState2(long seed) {
+    public MySimState(long seed) {
         super(seed);
     }
 

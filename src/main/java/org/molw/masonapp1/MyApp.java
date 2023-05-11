@@ -5,7 +5,7 @@ public class MyApp {
     public static void main(String[] args) {
 
         // Instantiate the SimState
-         MySimState2 mySimState = new MySimState2(System.currentTimeMillis());
+         MySimState mySimState = new MySimState(System.currentTimeMillis());
 
         //Tell it to start, which initializes and adds all the agents
         mySimState.start();

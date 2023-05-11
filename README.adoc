@@ -3,7 +3,18 @@
 Experiments with MASON - trying to get it to work without a main class
 
 
-The flow of of a simulation request should be
+== General Mason observations
+1. Mason examples use a bunch of public instance variables rather than private variables with getters and setters
+2. The number and execution of steps is handled by the app that creates the SimState
+3. The SimState can also really be thought of as a bag that holds all the variables needed for the simulation
+4. The SimState is responsible for making the agents, making the world, placing them on the world, and also making scheduling queues for agents and worlds
+5. World (Grids or Continuous) are nothing special - they are either a 2d array (raster) a hashamp with the objects and their coordinates (continuous)
+6. Right now I think, for a web based simulation, you make an endpoint and treat the get method as the main class in a cli app
+7. Over time, I think this has to be abstracted away so that the end point doesn't need to know about mason, it just runs a simulation for agent X, N number of times, and puts the output in DB D
+
+== Our actual simulation
+
+The flow of a simulation request should be
 
 1. User signs in
 2. User picks a species, optionally change some of the species parameters, and enters metadata required to run the sim.
