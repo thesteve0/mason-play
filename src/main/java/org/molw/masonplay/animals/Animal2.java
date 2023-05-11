@@ -6,6 +6,7 @@ import sim.engine.Steppable;
 import sim.util.Double2D;
 
 public class Animal2 implements Steppable {
+    private static final long serialVersionUID = 1;
 
 
     @Override
